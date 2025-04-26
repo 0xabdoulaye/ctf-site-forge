@@ -4,25 +4,25 @@ import { Code2, Lock, Network, Shield } from "lucide-react";
 export const Team = () => {
   const members = [
     {
-      name: "Alex Chen",
+      name: "Mamadou Diallo",
       role: "Team Lead",
       specialty: "Reverse Engineering",
       icon: Code2,
     },
     {
-      name: "Sarah White",
+      name: "Fatoumata Camara",
       role: "Security Analyst",
       specialty: "Web Exploitation",
       icon: Shield,
     },
     {
-      name: "Marcus Brown",
+      name: "Ibrahim Bah",
       role: "Cryptographer",
-      specialty: "Cryptography",
+      specialty: "Cryptographie",
       icon: Lock,
     },
     {
-      name: "Julia Lee",
+      name: "Aissatou Touré",
       role: "Network Specialist",
       specialty: "Network Security",
       icon: Network,
@@ -32,7 +32,7 @@ export const Team = () => {
   return (
     <div className="py-20 bg-[#0A0E17]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center text-primary">Our Team</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-primary">Notre Équipe</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {members.map((member) => (
             <div key={member.name} className="p-6 border border-accent rounded-lg neon-border">
