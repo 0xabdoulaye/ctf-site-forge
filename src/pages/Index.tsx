@@ -2,10 +2,10 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Team } from "@/components/Team";
-import { Contact } from "@/components/Contact";
 import { Navbar } from "@/components/Navbar";
 import { Accomplishments } from "@/components/Accomplishments";
 import { SocialNetworks } from "@/components/SocialNetworks";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -16,7 +16,7 @@ const Index = () => {
       <About />
       <Team />
       <SocialNetworks />
-      <Contact />
+      <Footer />
     </main>
   );
 };
