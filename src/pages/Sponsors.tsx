@@ -1,5 +1,5 @@
 
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import { Award, Star, Zap, Users } from "lucide-react";
 
 const Sponsors = () => {
