@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { loadMarkdownPosts } from "@/lib/loadMarkdownPosts";
 import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
 
 export default function Blog() {
   const [posts, setPosts] = useState<any[]>([]);
@@ -10,29 +11,37 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold mb-8 text-primary">Blog</h1>
-      <div className="grid md:grid-cols-2 gap-8">
-        {posts.map((post) => (
-          <Link
-            to={`/blog/${post.slug}`}
-            key={post.slug}
-            className="block border border-accent rounded-lg p-6 hover:shadow-lg transition-all bg-secondary"
-          >
-            {post.thumbnail && (
-              <img
-                src={post.thumbnail}
-                alt={post.title}
-                className="w-full h-48 object-cover rounded mb-4"
-              />
-            )}
-            <h2 className="text-2xl font-bold mb-2 text-primary">{post.title}</h2>
-            <p className="text-muted-foreground mb-2">{post.excerpt}</p>
-            <div className="text-xs text-muted-foreground">
-              {post.date} • {post.tags?.join(", ")}
-            </div>
-          </Link>
-        ))}
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 text-blue-50">
+      <Navbar />
+      <div className="container mx-auto py-12 px-4">
+        <h1 className="text-4xl font-black mb-10 text-blue-300 tracking-tight">Blog</h1>
+        <div className="grid md:grid-cols-2 gap-10">
+          {posts.map((post) => (
+            <Link
+              to={`/blog/${post.slug}`}
+              key={post.slug}
+              className="block border border-blue-700 rounded-lg p-6 hover:shadow-2xl transition-all bg-gradient-to-br from-slate-900 to-blue-950"
+            >
+              {post.thumbnail && (
+                <img
+                  src={post.thumbnail}
+                  alt={post.title}
+                  className="w-full h-48 object-cover rounded mb-4 border border-blue-800"
+                />
+              )}
+              <h2 className="text-2xl font-bold mb-2 text-blue-200">{post.title}</h2>
+              <p className="text-blue-100 mb-2">{post.excerpt}</p>
+              <div className="text-xs text-blue-400">
+                {post.date} • {post.tags?.join(", ")}
+              </div>
+              <div className="mt-4 text-right">
+                <span className="inline-block px-4 py-1 bg-blue-800/60 text-blue-100 rounded hover:bg-blue-700 transition-colors font-semibold">
+                  Lire l’article →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

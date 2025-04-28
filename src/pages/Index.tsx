@@ -8,15 +8,17 @@ import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-slate-900 text-blue-50">
       <Navbar />
-      <Hero />
-      <Accomplishments />
-      <About />
-      <Team />
-      <SocialNetworks />
+      <main>
+        <Hero />
+        <Accomplishments />
+        <About />
+        <Team />
+        <SocialNetworks />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 };
 

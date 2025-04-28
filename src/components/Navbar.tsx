@@ -11,10 +11,9 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <nav className="w-full bg-[#141B2D] border-b border-accent py-2 px-4 flex items-center justify-between z-20 relative">
-      <div className="flex items-center space-x-3">
-        {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-accent hover:opacity-80 transition-all">
+    <nav className="w-full bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 border-b border-blue-400 py-2 px-6 flex items-center justify-between shadow-lg sticky top-0 z-30">
+      <div className="flex items-center space-x-4">
+        <Link to="/" className="text-2xl font-extrabold text-blue-300 hover:text-white transition-colors">
           GOS
         </Link>
       </div>
@@ -23,10 +22,10 @@ export default function Navbar() {
           <Link
             key={link.to}
             to={link.to}
-            className={`text-base font-medium transition-all ${
+            className={`text-base font-semibold px-2 py-1 rounded transition-colors ${
               pathname === link.to
-                ? "text-accent underline underline-offset-4"
-                : "text-primary hover:text-accent"
+                ? "bg-blue-700 text-blue-200 shadow"
+                : "text-blue-100 hover:bg-blue-600 hover:text-white"
             }`}
           >
             {link.label}
