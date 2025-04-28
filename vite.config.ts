@@ -19,7 +19,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: "/ctf-site-forge/",
   build: {
-    outDir: "dist/client", // Ensure the build output matches Netlify's expected directory
+    outDir: "dist",
   },
 }));

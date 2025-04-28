@@ -13,12 +13,18 @@ import Navbar from "./components/Navbar"; // Assurez-vous que ce chemin est corr
 
 const queryClient = new QueryClient();
 
+// Fonction pour gérer le base path
+const getBasename = () => {
+  const base = import.meta.env.BASE_URL;
+  return base.endsWith('/') ? base.slice(0, -1) : base;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
