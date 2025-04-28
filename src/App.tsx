@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +9,7 @@ import BlogPost from "./pages/BlogPost";
 import Join from "./pages/Join";
 import Sponsors from "./pages/Sponsors";
 import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar"; // Assurez-vous que ce chemin est correct
 
 const queryClient = new QueryClient();
 
@@ -19,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/blog" element={<Blog />} />
